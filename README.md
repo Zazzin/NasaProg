@@ -1,3 +1,3 @@
 # NASA proj
-by Del Fabro Mattia, Boubagura Yassin & Lornezo Tincani
+by Del Fabro Mattia, Boubagura Yassin & Lorenzo Tincani
 
