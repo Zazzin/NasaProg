@@ -62,3 +62,4 @@ Per lo sviluppo di un sistema informatico che permetta la simulazione di un gest
 
 
 
+yassin è gay e ritardato
