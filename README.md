@@ -6,7 +6,7 @@ Tincani Lorenzo
 Il progetto dev’essere in grado di far visualizzare due tipologie di interfacce una dedicata all’utente “lavoratore”, ed una all’utente di tipo “amministratore”. Generalmente le due interfacce hanno lo scopo di effettuare varie operazioni come la creazione di razzi, dove è possibile specificare le caratteristiche, impostarne le coordinate di lancio, e accedere ad ulteriori informazioni riguardanti l’uso e le manovre usate riguardanti il lancio dei razzi balistici.
 Inoltre, ogni utente, per accedere alle varie funzionalità ad esso dedicate è necessaria l’autenticazione mediante, l’username e password. 
 Nel caso in cui l’accesso venga effettuato da un utente di tipo “amministratore”, questo ha anche la possibilità di apportare mod ifiche riguardanti lo stato e le caratteristiche degli utenti “lavoratori”, oltre a gestire attraverso ulteriori funzionalità il comportamento e la gestione dei razzi bellici. Coloro che effettuano l’accesso da utente “lavoratore” avranno la possibilità di gestire e specificare gli usi esclusivamente dei razzi di tipo spaziale.
-REQUISITI FUNZIONALI:
+## REQUISITI FUNZIONALI:
 il sistema deve permettere una simulazione di un gestionale della per il lancio di razzi spaziali della Nasa e per il lancio di raggi bellici
 all'accesso nel sistema verrà richiesto di identificarsi tramite un login che andrà a stabilire se si è un lavoratore semplice oppure l’amministratore 
 una volta che il login sarà avvenuto con successo si dovrà presentare una schermata di menù che fornirà le possibili azioni eseguibili in base al ruolo identificato in fase di login, dato che le azioni saranno differenti in base al tipo di utente
