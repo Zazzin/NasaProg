@@ -57,8 +57,4 @@ Per lo sviluppo di un sistema informatico che permetta la simulazione di un gest
 - una componente conterrà i lavoratori con i rispettivi dati che sono: nome utente, password ed id
 - Un ulteriore componente sará quella della gestione dei lavoratori tramite un'istanza che permettetterá di aggiungere, rimuovere e modificare un utente
 - una componente è quella che gestisce i menù contenenti le azioni eseguibili dagli  dai lavoratori semplici o dall’amministratore 
-- una componente è quella dei log che contiene i vari log per l'appunto e ne gestisce il salvamento
-
-
-
-
+- una componente è quella dei log che contiene i vari log per l'appunto e ne gestisce il salvamento.
