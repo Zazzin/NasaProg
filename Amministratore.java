@@ -10,8 +10,9 @@ public class Amministratore extends Lavoratore{
         super(inputName, inputPassword, inputId);
     }
 
+    @Override
     public String toString(){
-        return "Admin\n" + "il nome é: " + getNomeUtente() +" la password é: "+ getPassword() +" l'ID é: "+ getId();
+        return "Admin:      " + "il nome é: " + getNomeUtente() +" la password é: "+ getPassword() +" l'ID é: "+ getId();
     }
 
     public Lavoratore getUtenti(ArrayList<Lavoratore> lavoratori){
@@ -37,7 +38,7 @@ public class Amministratore extends Lavoratore{
             }
         }
     }
-    
+
 
     
 }

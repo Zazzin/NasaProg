@@ -39,8 +39,9 @@ public class Lavoratore {
         this.id = id;
     }
 
+    @Override
     public String toString(){
-        return "Lavoratore \n" + "il nome é: " + getNomeUtente() +" la password é: "+ getPassword() +" l'ID é: "+ getId();
+        return "Lavoratore:     " + "il nome é: " + getNomeUtente() +" la password é: "+ getPassword() +" l'ID é: "+ getId();
     }
 
     //public void creaRazzo(){
