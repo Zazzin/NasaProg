@@ -14,8 +14,12 @@ public class RazzoBellico extends Razzo{
         coordinate = new Coordinata(x, y);        
     }
 
-    public Coordinata getCoordinate(){
+    public Coordinata getCoordinata(){
         return this.coordinate;
     }
     
+    public void setCoordinata(double x, double y){
+        this.coordinate.setX(x);
+        this.coordinate.setY(y);
+    }
 }
