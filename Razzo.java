@@ -26,4 +26,7 @@ public class Razzo {
         return this.nomeRazzo;
     }
     
+    public double raggio(){
+        return this.raggio;
+    }
 }
