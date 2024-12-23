@@ -20,5 +20,10 @@ public class Razzo {
         this.numeroMotori = numeroMotori;
         this.id = id;
     }
+
+    //getter
+    public String getNomeRazzo(){
+        return this.nomeRazzo;
+    }
     
 }
