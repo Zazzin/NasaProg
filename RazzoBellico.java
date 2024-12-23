@@ -13,4 +13,9 @@ public class RazzoBellico extends Razzo{
         super(nomeRazzo, raggio, numeroMotori, id);
         coordinate = new Coordinata(x, y);        
     }
+
+    public Coordinata getCoordinate(){
+        return this.coordinate;
+    }
+    
 }
