@@ -13,5 +13,12 @@ public class Razzo {
         this.numeroMotori = 0;
         this.id = "";
     }
+
+    public Razzo(String nomeRazzo,double raggio, int numeroMotori, String id){
+        this.nomeRazzo = nomeRazzo;
+        this.raggio = raggio;
+        this.numeroMotori = numeroMotori;
+        this.id = id;
+    }
     
 }
