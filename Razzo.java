@@ -33,4 +33,8 @@ public class Razzo {
     public int getNumeroMotori(){
         return numeroMotori;
     }
+
+    public String getId(){
+        return this.id;
+    }
 }
