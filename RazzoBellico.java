@@ -22,4 +22,8 @@ public class RazzoBellico extends Razzo{
         this.coordinate.setX(x);
         this.coordinate.setY(y);
     }
+
+    public String toString() {
+        return super.toString()+" coordinata: "+getCoordinata();
+    }
 }
