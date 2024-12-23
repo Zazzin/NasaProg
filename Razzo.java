@@ -26,7 +26,11 @@ public class Razzo {
         return this.nomeRazzo;
     }
     
-    public double raggio(){
+    public double getRaggio(){
         return this.raggio;
+    }
+
+    public int getNumeroMotori(){
+        return numeroMotori;
     }
 }
