@@ -37,4 +37,11 @@ public class Razzo {
     public String getId(){
         return this.id;
     }
+
+    //setter
+    public void setNomeRazzo(String nomeRazzo){
+        this.nomeRazzo = nomeRazzo;
+    }
+
+
 }
