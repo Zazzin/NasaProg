@@ -55,4 +55,8 @@ public class Razzo {
         this.id = id;
     }
 
+    public String toString(){
+        return "nome razzo: "+getNomeRazzo()+" raggio: "+getRaggio()+" numero di motori: "+getNumeroMotori()+" id: "+getId();
+    }
+
 }
