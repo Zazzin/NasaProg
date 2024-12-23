@@ -43,5 +43,9 @@ public class Razzo {
         this.nomeRazzo = nomeRazzo;
     }
 
+    public void setRaggio(double raggio){
+        this.raggio = raggio;
+    }
+
 
 }
