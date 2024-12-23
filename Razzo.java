@@ -47,5 +47,8 @@ public class Razzo {
         this.raggio = raggio;
     }
 
+    public void setNumeroMotori(int numeroMotori){
+        this.numeroMotori = numeroMotori;
+    }
 
 }
