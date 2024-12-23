@@ -13,4 +13,12 @@ public class Coordinata {
         this.x = x;
         this.y = y;
     }
+
+    //getter
+    public double getX(){
+        return this.x;
+    }
+    public double getY(){
+        return this.y;
+    }
 }
