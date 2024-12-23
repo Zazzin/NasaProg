@@ -29,4 +29,8 @@ public class Coordinata {
     public void setY(double y){
         this.y = y;
     }
+
+    public String toString() {
+        return "X: "+getX()+" Y: "+getY();
+    }
 }
