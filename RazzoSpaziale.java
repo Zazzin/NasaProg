@@ -9,4 +9,9 @@ public class RazzoSpaziale extends Razzo{
         super();
         this.oggettiContenuti = new ArrayList<String>();
     }
+
+    public RazzoSpaziale(String nomeRazzo,double raggio, int numeroMotori, String id){
+        super(nomeRazzo, raggio, numeroMotori, id);
+        this.oggettiContenuti = new ArrayList<String>();
+    }
 }
