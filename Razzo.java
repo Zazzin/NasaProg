@@ -51,4 +51,8 @@ public class Razzo {
         this.numeroMotori = numeroMotori;
     }
 
+    public void setId(String id){
+        this.id = id;
+    }
+
 }
