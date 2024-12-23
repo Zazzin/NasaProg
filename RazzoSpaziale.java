@@ -15,7 +15,15 @@ public class RazzoSpaziale extends Razzo{
         this.oggettiContenuti = new ArrayList<String>();
     }
 
-    public ArrayList<String> getOgetti(){
+    public ArrayList<String> getOggetti(){
         return this.oggettiContenuti;
+    }
+
+    public void addOggetto(String oggetto){
+        this.oggettiContenuti.add(oggetto);
+    }
+
+    public String toString() {
+        return super.toString() + " ogetti contenuti: "+getOggetti();
     }
 }
