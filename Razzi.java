@@ -13,4 +13,9 @@ public class Razzi {
     public ArrayList<Razzo> getRazzi(){
         return this.insiemeRazzi;
     }
+
+    //funzione per aggiungere un razzo
+    public boolean addRazzo(Razzo razzo){
+        return (this.insiemeRazzi.add(razzo));
+    }
 }
