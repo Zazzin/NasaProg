@@ -57,7 +57,8 @@ public class Razzi {
         return (razzo.getAltezza() == razzo.getRaggio()*divisoreAltezzaPerOttenereRaggio);
     }
 
-    public boolean isRazzoRispettanteParamentri(Razzo razzo){
+    public boolean isRazzoRispettanteParamentri(String idRazzoDaControllare){
+        Razzo razzo = this.findRazzo(idRazzoDaControllare);
         return (this.isRazzoRispettanteParamentroPeso(razzo)  && isRazzoRispettanteParamentroAltezza(razzo) && isRazzoRispettanteParamentroMotori(razzo) && isRazzoRispettanteParamentroRaggio(razzo));
     }
 }
