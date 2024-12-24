@@ -61,4 +61,18 @@ public class Razzi {
         Razzo razzo = this.findRazzo(idRazzoDaControllare);
         return (this.isRazzoRispettanteParamentroPeso(razzo)  && isRazzoRispettanteParamentroAltezza(razzo) && isRazzoRispettanteParamentroMotori(razzo) && isRazzoRispettanteParamentroRaggio(razzo));
     }
+
+    //funzione verificare che il razzo abbia decollato senza problemi
+    public boolean IsRazzoDecollatoDallInsiemeDeiRazzi(String idRazzoDaLanciare){
+        if (this.isRazzoRispettanteParamentri(idRazzoDaLanciare)) {
+            //se il razzo riesce a decollare quindi rispecchia i parametri allora viene tolto dall'insieme dei razzi e viene ritornato valore true
+            this.removeRazzo(idRazzoDaLanciare);
+            return true;
+        }else{
+             //se il razzo non riesce a decollare quindi non rispecchia i parametri allora viene tolto dall'insieme dei razzi e viene ritornato valore false
+            this.removeRazzo(idRazzoDaLanciare);
+            return false;
+        }
+    }
+
 }
