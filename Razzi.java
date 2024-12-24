@@ -8,4 +8,9 @@ public class Razzi {
     public Razzi(){
         this.insiemeRazzi = new ArrayList<Razzo>();
     }
+
+    //getter
+    public ArrayList<Razzo> getRazzi(){
+        return this.insiemeRazzi;
+    }
 }
