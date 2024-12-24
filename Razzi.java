@@ -20,12 +20,17 @@ public class Razzi {
     }
 
     //funzione per cercare un razzo
-    public Razzo findRazzo(String idDaTrovare){
+    public Razzo findRazzo(String idRazzoDaTrovare){
         for (Razzo razzo : insiemeRazzi) {
-            if (razzo.getId().equals(idDaTrovare)) {
+            if (razzo.getId().equals(idRazzoDaTrovare)) {
                 return razzo;
             }
         }
         return null;
+    }
+
+    //funzione per rimuovere un razzo
+    public boolean removeRazzo(String idRazzoDaRimuovere){
+        return (this.insiemeRazzi.remove(this.findRazzo(idRazzoDaRimuovere)));
     }
 }
