@@ -18,4 +18,14 @@ public class Razzi {
     public boolean addRazzo(Razzo razzo){
         return (this.insiemeRazzi.add(razzo));
     }
+
+    //funzione per cercare un razzo
+    public Razzo findRazzo(String idDaTrovare){
+        for (Razzo razzo : insiemeRazzi) {
+            if (razzo.getId().equals(idDaTrovare)) {
+                return razzo;
+            }
+        }
+        return null;
+    }
 }
