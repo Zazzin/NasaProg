@@ -33,4 +33,31 @@ public class Razzi {
     public boolean removeRazzo(String idRazzoDaRimuovere){
         return (this.insiemeRazzi.remove(this.findRazzo(idRazzoDaRimuovere)));
     }
+
+    //funzioni per verificare se un razzo all'interno dell'inisieme dei razzi rispecchia i parametri
+    //i parametri usati nelle funzioni sono indicati in relazione
+
+    public boolean isRazzoRispettanteParamentroPeso(Razzo razzo){
+        int pesoMinimoRazzo = 500;
+        return (razzo.getPeso() > pesoMinimoRazzo);
+    }
+
+    public boolean isRazzoRispettanteParamentroAltezza(Razzo razzo){
+        int altezzaMinima = 60;
+        return (razzo.getAltezza() > altezzaMinima);
+    }
+
+    public boolean isRazzoRispettanteParamentroMotori(Razzo razzo){
+        int KgPerMotore = 500;
+        return ((razzo.getPeso()/razzo.getNumeroMotori()) == KgPerMotore);
+    }
+
+    public boolean isRazzoRispettanteParamentroRaggio(Razzo razzo){
+        int divisoreAltezzaPerOttenereRaggio = 10;
+        return (razzo.getAltezza() == razzo.getRaggio()*divisoreAltezzaPerOttenereRaggio);
+    }
+
+    public boolean isRazzoRispettanteParamentri(Razzo razzo){
+        return (this.isRazzoRispettanteParamentroPeso(razzo)  && isRazzoRispettanteParamentroAltezza(razzo) && isRazzoRispettanteParamentroMotori(razzo) && isRazzoRispettanteParamentroRaggio(razzo));
+    }
 }
