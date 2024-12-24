@@ -7,8 +7,8 @@ public class RazzoBellico extends Razzo{
         this.coordinate = new Coordinata();
     }
 
-    public RazzoBellico(String nomeRazzo,double raggio, int numeroMotori, String id, double x, double y){
-        super(nomeRazzo, raggio, numeroMotori, id);
+    public RazzoBellico(String nomeRazzo,double raggio, int numeroMotori, double peso, double altezza, String id, double x, double y){
+        super(nomeRazzo, raggio, numeroMotori, peso, altezza, id);
         coordinate = new Coordinata(x, y);        
     }
 
