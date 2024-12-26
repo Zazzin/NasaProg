@@ -44,14 +44,6 @@ public class Lavoratore {
         return "Lavoratore:     " + "il nome é: " + getNomeUtente() +" la password é: "+ getPassword() +" l'ID é: "+ getId();
     }
 
-    //public void creaRazzo(){
-        
-    //}
-
-    //public void modificaRazzo(){
-
-    //}
-
 
 
 

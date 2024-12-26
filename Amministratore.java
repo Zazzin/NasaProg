@@ -6,7 +6,7 @@ public class Amministratore extends Lavoratore{
         
     }
 
-    public Amministratore(String inputName, String inputPassword, int inputId){
+    public Amministratore(String inputName, String inputPassword, String inputId){
         super(inputName, inputPassword, inputId);
     }
 
@@ -16,29 +16,25 @@ public class Amministratore extends Lavoratore{
     }
 
     public Lavoratore getUtenti(ArrayList<Lavoratore> lavoratori){
+
         for(Lavoratore worker : lavoratori){
+
             System.out.println(worker.toString());
             return worker;
+
         }
+
+        return null;
 
     }
 
     public void printUtenti(ArrayList<Lavoratore> lavoratori){
+
         for(Lavoratore worker : lavoratori){
             System.out.println(worker.toString()); 
         }
 
+        
     }
-
-    public void rimuoviRazzo(String IdInput){
-
-        for (int i; i <= razzi.size(); i++){
-            if (razzi.get(i).getId().equals(IdInput)) {
-                razzi.remove();
-            }
-        }
-    }
-
-
     
 }

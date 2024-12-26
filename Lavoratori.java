@@ -38,18 +38,9 @@ public class Lavoratori {
     }
 
     public String toString(){
+
         return "Insieme razzi:" + getLavotori();
+
     }
-
-
-
-    
-
-
-
-
-
-
-
 
 }
