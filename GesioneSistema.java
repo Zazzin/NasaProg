@@ -29,11 +29,15 @@ public class GesioneSistema {
         if (lavoratore.getNomeUtente().equals(inputUsername) && lavoratore.getPassword().equals(inputPassword)) {
 
         } else if (amministratore.getNomeUtente().equals(inputUsername) && amministratore.getPassword().equals(inputPassword)) {
-            
+
         }
             
     }
-    // log out
+
+    public void logout() {
+        this.amministratore = null;
+        this.lavoratore = null;
+    }
 
 
     // public Log getLog() {
