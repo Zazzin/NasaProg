@@ -16,5 +16,28 @@ public class Azione {
         this.dataEOra = Calendar.getInstance();
     }
 
+    //getter
+    public String getAzione(){
+        return this.azione;
+    }
+    public Calendar getDataEOra(){
+        return this.dataEOra;
+    }
+
+     //setter
+    public void setAzione(String azione){
+        this.azione = azione;
+    }
+    public void setDataEOra(Calendar dataOra){
+        this.dataEOra = dataOra;
+    }
+
+    //inscerisci data
+    public void inscerisciDataOra(){
+        this.dataEOra = Calendar.getInstance();
+    }
     
+    public String toString() {
+        return "azione eseguita: "+getAzione()+" data e ora: "+getDataEOra().getTime()+"\n";
+    }
 }
