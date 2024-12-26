@@ -32,5 +32,9 @@ public class Azione {
         this.dataEOra = dataOra;
     }
 
+    //inscerisci data
+    public void inscerisciDataOra(){
+        this.dataEOra = Calendar.getInstance();
+    }
 
 }
