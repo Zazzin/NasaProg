@@ -13,4 +13,10 @@ public class Log {
     public ArrayList<Azione> getAzioni(){
         return this.azioni;
     }
+
+    //aggiungere un azione
+    public boolean aggiungiAzione(String azione){
+        Azione azioneDaAggiungere = new Azione(azione);
+        return (this.azioni.add(azioneDaAggiungere)) ;
+    }
 }
