@@ -25,7 +25,14 @@ public class GesioneSistema {
         return this.amministratore;
     }
 
-    public void 
+    public void login(Lavoratore lavoratore, Amministratore amministratore, String inputUsername, String inputPassword) {
+        if (lavoratore.getNomeUtente().equals(inputUsername) && lavoratore.getPassword().equals(inputPassword)) {
+
+        } else if (amministratore.getNomeUtente().equals(inputUsername) && amministratore.getPassword().equals(inputPassword)) {
+            
+        }
+            
+    }
     // log out
 
 
