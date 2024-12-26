@@ -23,3 +23,4 @@ public class Log {
         return "azioni con data e ora: \n" + getAzioni();
     }
 }
+ 
