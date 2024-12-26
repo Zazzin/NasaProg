@@ -23,5 +23,14 @@ public class Azione {
     public Calendar getDataEOra(){
         return this.dataEOra;
     }
-    
+
+     //setter
+    public void setAzione(String azione){
+        this.azione = azione;
+    }
+    public void setDataEOra(Calendar dataOra){
+        this.dataEOra = dataOra;
+    }
+
+
 }
