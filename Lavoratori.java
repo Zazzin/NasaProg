@@ -35,7 +35,13 @@ public class Lavoratori {
 
     public void removeRazzo(String inputId){
         this.insiemeLavoratori.remove(this.findLavoratore(inputId));
-    } 
+    }
+
+    public String toString(){
+        return "Insieme razzi:" + getLavotori();
+    }
+
+
 
     
 
