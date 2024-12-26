@@ -36,5 +36,8 @@ public class Azione {
     public void inscerisciDataOra(){
         this.dataEOra = Calendar.getInstance();
     }
-
+    
+    public String toString() {
+        return "azione eseguita: "+getAzione()+" data e ora: "+getDataEOra().getTime()+"\n";
+    }
 }
