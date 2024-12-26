@@ -3,7 +3,7 @@ import java.util.ArrayList;
 public class Amministratore extends Lavoratore{
 
     public Amministratore(){
-        
+    
     }
 
     public Amministratore(String inputName, String inputPassword, String inputId){
@@ -31,10 +31,11 @@ public class Amministratore extends Lavoratore{
     public void printUtenti(ArrayList<Lavoratore> lavoratori){
 
         for(Lavoratore worker : lavoratori){
-            System.out.println(worker.toString()); 
+            
+            System.out.println(worker.toString());
+
         }
 
-        
     }
     
 }
