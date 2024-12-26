@@ -21,15 +21,21 @@ public class Lavoratori {
 
     }
 
-    public void findLavoratore(String inputId){
+    public Lavoratore findLavoratore(String inputId){
 
         for (Lavoratore l : insiemeLavoratori) {
-            if (l.getId() == ) {
-                
+            if (l.getId().equals(inputId)) {
+                return l;
             }
         }
 
+        return null;
+
     }
+
+    public void removeRazzo(String inputId){
+        this.insiemeLavoratori.remove(this.findLavoratore(inputId));
+    } 
 
     
 

@@ -1,9 +1,9 @@
 public class Lavoratore {
     protected String nomeUtente;
     protected String password;
-    protected int id;
+    protected String id;
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
@@ -15,7 +15,7 @@ public class Lavoratore {
         return password;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -30,10 +30,10 @@ public class Lavoratore {
     public Lavoratore(){
         this.nomeUtente = " ";
         this.password = " ";
-        this.id = 0;
+        this.id = " ";
     }
 
-    public Lavoratore(String inputNome, String inputPassword, int id){
+    public Lavoratore(String inputNome, String inputPassword, String id){
         this.nomeUtente = inputNome;
         this.password = inputPassword;
         this.id = id;
