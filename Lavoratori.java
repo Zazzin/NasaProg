@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 public class Lavoratori {
-    ArrayList<Lavoratore> insiemeLavoratori;
+    protected ArrayList<Lavoratore> insiemeLavoratori;
 
     public Lavoratori(){
 
@@ -24,6 +24,7 @@ public class Lavoratori {
     public Lavoratore findLavoratore(String inputId){
 
         for (Lavoratore l : insiemeLavoratori) {
+            
             if (l.getId().equals(inputId)) {
                 return l;
             }
