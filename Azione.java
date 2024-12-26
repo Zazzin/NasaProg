@@ -16,5 +16,12 @@ public class Azione {
         this.dataEOra = Calendar.getInstance();
     }
 
+    //getter
+    public String getAzione(){
+        return this.azione;
+    }
+    public Calendar getDataEOra(){
+        return this.dataEOra;
+    }
     
 }
