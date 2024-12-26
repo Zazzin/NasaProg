@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 public class Lavoratori {
-    ArrayList<Lavoratore> insiemeLavoratori;
+    protected ArrayList<Lavoratore> insiemeLavoratori;
 
     public Lavoratori(){
 
