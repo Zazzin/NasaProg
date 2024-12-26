@@ -24,9 +24,11 @@ public class Lavoratori {
     public Lavoratore findLavoratore(String inputId){
 
         for (Lavoratore l : insiemeLavoratori) {
+
             if (l.getId().equals(inputId)) {
                 return l;
             }
+            
         }
 
         return null;
