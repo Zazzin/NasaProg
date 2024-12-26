@@ -33,7 +33,7 @@ public class Lavoratori {
 
     }
 
-    public void removeRazzo(String inputId){
+    public void removeLavoratore(String inputId){
         this.insiemeLavoratori.remove(this.findLavoratore(inputId));
     }
 
