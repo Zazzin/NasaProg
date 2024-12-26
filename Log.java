@@ -19,4 +19,7 @@ public class Log {
         Azione azioneDaAggiungere = new Azione(azione);
         return (this.azioni.add(azioneDaAggiungere)) ;
     }
+    public String toString() {
+        return "azioni con data e ora: \n" + getAzioni();
+    }
 }
