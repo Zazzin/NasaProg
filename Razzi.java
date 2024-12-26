@@ -75,4 +75,8 @@ public class Razzi {
         }
     }
 
+    public String toString() {
+        return "Insieme razzi:\n"+getRazzi();
+    }
+
 }
