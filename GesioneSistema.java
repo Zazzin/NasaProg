@@ -2,7 +2,6 @@ public class GesioneSistema {
     Razzi razzi;
     Lavoratori lavoratori;
     Amministratore amministratore;
-    private boolean utenteAutenticato = false;
 
     // log
     public GesioneSistema() {
@@ -29,9 +28,9 @@ public class GesioneSistema {
 
     public void login(Lavoratore lavoratore, Amministratore amministratore, String inputUsername, String inputPassword) {
         if (lavoratore.getNomeUtente().equals(inputUsername) && lavoratore.getPassword().equals(inputPassword)) {
-            utenteAutenticato = true;
+            //
         } else if (amministratore.getNomeUtente().equals(inputUsername) && amministratore.getPassword().equals(inputPassword)) {
-            
+            //
         }
             
     }
