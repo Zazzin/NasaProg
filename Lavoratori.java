@@ -34,6 +34,19 @@ public class Lavoratori {
 
     }
 
+    public Lavoratore findLavoratoreNomePassword(String userName, String passwordInput){
+        for (Lavoratore l : insiemeLavoratori) {
+            
+            if (l.getNomeUtente().equals(userName) && l.getPassword().equals(passwordInput)) {
+                
+                return l;
+
+            }
+        }
+
+        return null;
+    }
+
     public void removeLavoratore(String inputId){
         this.insiemeLavoratori.remove(this.findLavoratore(inputId));
     }
