@@ -3,6 +3,7 @@ public class GesioneSistema {
     Lavoratori lavoratori;
     Amministratore amministratore;
 
+    @SuppressWarnings("unused")
     private Utente utenteAu;
 
     // log
