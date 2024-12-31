@@ -1,4 +1,4 @@
-public class Lavoratore {
+public class Lavoratore extends Utente{ // tincani: aggiuto exdends utente
     protected String nomeUtente;
     protected String password;
     protected String id;
@@ -41,7 +41,7 @@ public class Lavoratore {
 
     @Override
     public String toString(){
-        return "Lavoratore:     " + "il nome é: " + getNomeUtente() +" la password é: "+ getPassword() +" l'ID é: "+ getId();
+        return "\n>> Lavoratore" + "\n    Username: " + getNomeUtente() +"\n    Password: "+ getPassword() +"\n    ID: "+ getId();
     }
 
 

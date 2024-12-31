@@ -16,9 +16,7 @@ public class Lavoratori {
     }
 
     public void addLavoratore(Lavoratore inputLavoratore){
-
         insiemeLavoratori.add(inputLavoratore);
-
     }
 
     public Lavoratore findLavoratore(String inputId){
@@ -39,9 +37,12 @@ public class Lavoratori {
     }
 
     public String toString(){
-
-        return "Insieme razzi:" + getLavotori();
-
+        String output = "";
+        for (Lavoratore lavoratore : insiemeLavoratori) {
+            output += lavoratore.toString() + "\n";
+        }
+        // return "Insieme razzi:" + getLavotori();
+        return output;
     }
 
 }

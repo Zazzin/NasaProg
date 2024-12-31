@@ -3,6 +3,8 @@ public class GesioneSistema {
     Lavoratori lavoratori;
     Amministratore amministratore;
 
+    private Utente utenteAu;
+
     // log
     public GesioneSistema() {
         razzi = new Razzi();
@@ -26,20 +28,6 @@ public class GesioneSistema {
         return this.amministratore;
     }
 
-    public void login(Lavoratore lavoratore, Amministratore amministratore, String inputUsername, String inputPassword) {
-        if (lavoratore.getNomeUtente().equals(inputUsername) && lavoratore.getPassword().equals(inputPassword)) {
-            //
-        } else if (amministratore.getNomeUtente().equals(inputUsername) && amministratore.getPassword().equals(inputPassword)) {
-            //
-        }
-            
-    }
-
-    public void logout() {
-        this.amministratore = null;
-        this.lavoratori = null;
-    }
-
     public Lavoratore newLavoratore() {
         Lavoratore lavoratore = new Lavoratore();
 
@@ -55,24 +43,22 @@ public class GesioneSistema {
         return lavoratore;
     }
 
-    public Lavoratore newAmministratore() {
-        Amministratore amministratore = new Amministratore();
-
-        System.out.print("Inserisci nome del amministratore: ");
-        amministratore.setNomeUtente(Leggi.unoString());
+    public void newAmministratore() {
+        System.out.print("Inserisci l'username del amministratore: ");
+        String username = Leggi.unoString();
 
         System.out.print("Inserisci la passoword del amministratore: ");
-        amministratore.setPassword(Leggi.unoString());
+        String password = Leggi.unoString();
 
         System.out.print("Inserisci ID del amministratore: ");
-        amministratore.setId(Leggi.unoString());
+        String id = Leggi.unoString();
 
-        return amministratore;
+        this.amministratore = new Amministratore(username, password, id);
     }
 
     public String getID() {
         String inputID;
-        System.out.println("Inserisci l'ID da ricercare: ");
+        System.out.print("Inserisci l'ID da ricercare: ");
         inputID = Leggi.unoString();
         return inputID;
     }
@@ -82,70 +68,158 @@ public class GesioneSistema {
         
         System.out.print("Inserisci nome del razzo: ");
         razzoSpaziale.setNomeRazzo(Leggi.unoString());
-
         System.out.print("Inserisci raggio del razzo: ");
         razzoSpaziale.setRaggio(Leggi.unDouble());
-
         System.out.print("Inserisci numero di motori del razzo: ");
         razzoSpaziale.setNumeroMotori(Leggi.unInt());
-
         System.out.print("Inserisci peso del razzo: ");
         razzoSpaziale.setPeso(Leggi.unDouble());
-
         System.out.print("Inserisci altezza del razzo: ");
         razzoSpaziale.setAltezza(Leggi.unDouble());
-
         System.out.print("Inserisci ID del razzo: ");
         razzoSpaziale.setId(Leggi.unoString());
         return razzoSpaziale;
     }
 
-    public RazzoBellico newRazzoBellico() {
-        RazzoBellico razzoBellico = new RazzoBellico();
-        
-        System.out.print("Inserisci nome del razzo: ");
-        razzoBellico.setNomeRazzo(Leggi.unoString());
-
-        System.out.print("Inserisci raggio del razzo: ");
-        razzoBellico.setRaggio(Leggi.unDouble());
-
-        System.out.print("Inserisci numero di motori del razzo: ");
-        razzoBellico.setNumeroMotori(Leggi.unInt());
-
-        System.out.print("Inserisci peso del razzo: ");
-        razzoBellico.setPeso(Leggi.unDouble());
-
-        System.out.print("Inserisci altezza del razzo: ");
-        razzoBellico.setAltezza(Leggi.unDouble());
-
-        System.out.print("Inserisci ID del razzo: ");
-        razzoBellico.setId(Leggi.unoString());
-        return razzoBellico;
+    public void loginAmministratore(String inputUsername, String inputPassword) {
+        if (amministratore.getNomeUtente().equals(inputUsername) && amministratore.getPassword().equals(inputPassword)) {
+            this.utenteAu = amministratore;
+            MenuAmministratore();
+        } else {
+            System.out.println("\nCredenziali errate");
+        }
     }
 
-    // B
+    public void loginLavoratore(String inputUsername, String inputPassword) {
+        for (Lavoratore lavoratore : lavoratori.getLavotori()) {
+            if (lavoratore.getNomeUtente().equals(inputUsername) && lavoratore.getPassword().equals(inputPassword)) {
+                this.utenteAu = lavoratore;
+                MenuLavoratore();
+                return;
+            }
+        }
+        System.out.println("\nCredenziali errate");
+    }
+
+    public void menuLogin() {
+        System.out.print("\nIndica il tipo di account con cui vuoi accedere\n1. Amministratore\n2. Lavoratore\n3. Esci dal sistema\nScelta: ");
+        int scelta = Leggi.unInt();
+        do{
+            switch (scelta) {
+                case 1:
+                    System.out.print("\nInserisci le credenziali di accesso dell'amministratore\nUsername: ");
+                    String inputUsernameAmm = Leggi.unoString();
+                    System.out.print("Password: ");
+                    String inputPasswordAmm = Leggi.unoString();
+                    loginAmministratore(inputUsernameAmm, inputPasswordAmm);
+                    break;
+                case 2:
+                    System.out.print("\nInserisci le credenziali di accesso del lavoratore\nUsername: ");
+                    String inputUsernameLav = Leggi.unoString();
+                    System.out.print("Password: ");
+                    String inputPasswordLav = Leggi.unoString();
+                    loginLavoratore(inputUsernameLav, inputPasswordLav);
+                    break;
+                case 3: 
+                    System.out.println("\nArrivederci");
+                    break;
+                default:
+                    break;
+            }
+        } while (scelta != 3);
+   }
+
+    public void logout() {
+        this.utenteAu = null;
+    }
     public void MenuLavoratore() {
-        // lavoratori.addLavoratore(newLavoratore());
-        // lavoratori.findLavoratore(getID());
-        // lavoratori.removeLavoratore(getID());
-        // lavoratori.toString();
-        razzi.addRazzo(newRazzoSpaziale());
-        razzi.removeRazzo(getID());
-        razzi.findRazzo(getID());
+        int scelta;
+        do {
+            System.out.println("\n>> Menù Lavoratore <<");
+            System.out.println("1. Aggiungi un razzo spaziale");
+            System.out.println("2. Rimuovi un razzo");
+            System.out.println("3. Trova un razzo");
+            System.out.println("4. Esci del menu lavoratore");
+            System.out.print("Seleziona un'opzione: ");
+            scelta = Leggi.unInt();
+
+            switch (scelta) {
+                case 1:
+                    razzi.addRazzo(newRazzoSpaziale());
+                    break;
+                case 2:
+                    razzi.removeRazzo(getID());
+                    break;
+                case 3:
+                    razzi.findRazzo(getID());
+                    break;
+                case 4:
+                    System.out.println("Arrivederci");
+                    logout();
+                    break;
+                default:
+                    System.out.println("L'opzoine inserita non è valida");
+            }
+        } while (scelta != 4);
     }
 
-    // B
     public void MenuAmministratore() {
-        lavoratori.addLavoratore(newLavoratore());
-        lavoratori.findLavoratore(getID());
-        lavoratori.removeLavoratore(getID());
+        int scelta;
+        do {
+            System.out.println("\n>> Menù Amministratore <<");
+            System.out.println("1. Aggiungi un lavoratore");
+            System.out.println("2. Rimuovi un lavoratore");
+            System.out.println("3. Trova un lavoratore");
+            System.out.println("4. Stampa elenco lavoratori");
+            System.out.println("5. Aggiungi un razzo spaziale");
+            System.out.println("6. Rimuovi un razzo");
+            System.out.println("7. Trova un razzo");
+            System.out.println("8. Esci dal menù amministratore");
+            System.out.print("Seleziona un'opzione: ");
+            scelta = Leggi.unInt();
+            switch (scelta) {
+                case 1:
+                    lavoratori.addLavoratore(newLavoratore());
+                    break;
+                case 2:
+                    lavoratori.removeLavoratore(getID());
+                    break;
+                case 3:
+                    System.out.println(lavoratori.toString());
+                    break;
+                case 4:
+                    System.out.println(lavoratori.toString());
+                    break;
+                case 5:
+                    razzi.addRazzo(newRazzoSpaziale());
+                    break;
+                case 6:
+                    razzi.removeRazzo(getID());
+                    break;
+                case 7:
+                    razzi.findRazzo(getID());
+                    break;
+                case 8:
+                    System.out.println("Logout effettuato, Arrivederci");
+                    logout();
+                    menuLogin();
+                    break;
+                default:
+                    System.out.println("Opzione non valida. Riprova.");
+                    break;
+            }
+        } while (scelta != 8);
+    }
 
-        razzi.addRazzo(newRazzoBellico());
-        razzi.removeRazzo(getID());
-        razzi.findRazzo(getID());
+    public static void main(String[] args) {
+        GesioneSistema sistema = new GesioneSistema();
 
-        amministratore.printUtenti(lavoratori.getLavotori());
-        amministratore.toString();
-        
+        sistema.newAmministratore();
+        System.out.print("\nEffettua il log in come amministratore\nInserisci l'username: ");
+        String inputAmmUsername = Leggi.unoString();
+        System.out.print("Inserisci la password: ");
+        String inputAmmPassword = Leggi.unoString();
+
+        sistema.loginAmministratore(inputAmmUsername, inputAmmPassword);
     }
 }
