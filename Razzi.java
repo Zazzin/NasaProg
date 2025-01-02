@@ -76,8 +76,11 @@ public class Razzi {
     }
 
     public String toString() {
-        String out
-        return "Insieme razzi:\n"+getRazzi();
+        String output = "";
+        for (Razzo razzo : insiemeRazzi) {
+            output += razzo.toString() + "/n";
+        }
+        return output;
+        // return "Insieme razzi:\n"+getRazzi();
     }
-
 }

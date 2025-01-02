@@ -141,7 +141,8 @@ public class GesioneSistema {
             System.out.println("1. Aggiungi un razzo spaziale");
             System.out.println("2. Rimuovi un razzo");
             System.out.println("3. Trova un razzo");
-            System.out.println("4. Esci del menu lavoratore");
+            System.out.println("4. Stampa elenco razzi spaziali");
+            System.out.println("5. Esci del menu lavoratore");
             System.out.print("Seleziona un'opzione: ");
             scelta = Leggi.unInt();
 
@@ -153,16 +154,19 @@ public class GesioneSistema {
                     razzi.removeRazzo(getID());
                     break;
                 case 3:
+                    // da sistemare
                     razzi.findRazzo(getID());
                     break;
                 case 4:
+                    System.out.println(razzi.toString());
+                case 5:
                     System.out.println("Arrivederci");
                     logout();
                     break;
                 default:
                     System.out.println("L'opzoine inserita non è valida");
             }
-        } while (scelta != 4);
+        } while (scelta != 5);
     }
 
     public void MenuAmministratore() {
