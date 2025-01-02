@@ -67,6 +67,8 @@ public class GesioneSistema {
 
     public RazzoSpaziale newRazzoSpaziale() {
         RazzoSpaziale razzoSpaziale = new RazzoSpaziale();
+        int numeroOggettiContenuti = 0;
+        String nomeOggetto;
         
         System.out.print("Inserisci nome del razzo: ");
         razzoSpaziale.setNomeRazzo(Leggi.unoString());
@@ -80,6 +82,14 @@ public class GesioneSistema {
         razzoSpaziale.setAltezza(Leggi.unDouble());
         System.out.print("Inserisci ID del razzo: ");
         razzoSpaziale.setId(Leggi.unoString());
+        System.out.println("inscerisci il numero degli oggetti che vuoi mettere nel raggio");
+        numeroOggettiContenuti = Leggi.unInt();
+        for (int i = 0; i < numeroOggettiContenuti; i++) {
+            System.out.println("Inscerisci il nome dell'oggetto");
+            nomeOggetto = Leggi.unoString();
+            razzoSpaziale.addOggetto(nomeOggetto);
+        }
+        
         return razzoSpaziale;
     }
 
@@ -140,7 +150,7 @@ public class GesioneSistema {
             System.out.println("\n>> Menù Lavoratore <<");
             System.out.println("1. Aggiungi un razzo spaziale");
             System.out.println("2. Rimuovi un razzo");
-            System.out.println("3. Trova un razzo");
+            System.out.println("3. Lancia un razzo");
             System.out.println("4. Stampa elenco razzi spaziali");
             System.out.println("5. Esci del menu lavoratore");
             System.out.print("Seleziona un'opzione: ");
@@ -155,6 +165,7 @@ public class GesioneSistema {
                     break;
                 case 3:
                     // da sistemare
+                    //razzi.lanciaRazzo();
                     razzi.findRazzo(getID());
                     break;
                 case 4:

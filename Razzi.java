@@ -75,12 +75,22 @@ public class Razzi {
         }
     }
 
-    public String toString() {
-        String output = "";
-        for (Razzo razzo : insiemeRazzi) {
-            output += razzo.toString() + "/n";
-        }
-        return output;
-        // return "Insieme razzi:\n"+getRazzi();
+    public void LanciaRazzo(Razzo razzoDaLanciare){
+        this.toString();
+        
     }
-}
+
+    // public String toString() {
+    //     String output = "";
+    //     for (Razzo razzo : insiemeRazzi) {
+    //         output += razzo.toString() + "/n";
+    //     }
+    //     return output;
+    //     // return "Insieme razzi:\n"+getRazzi();
+    // }
+    
+    public String toString() {
+        return ""+ this.getRazzi();
+    }
+    
+} 
