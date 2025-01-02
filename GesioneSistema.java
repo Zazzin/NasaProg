@@ -209,18 +209,7 @@ public class GesioneSistema {
                     System.out.println("Opzione non valida. Riprova.");
                     break;
             }
+            
         } while (scelta != 8);
-    }
-
-    public static void main(String[] args) {
-        GesioneSistema sistema = new GesioneSistema();
-
-        sistema.newAmministratore();
-        System.out.print("\nEffettua il log in come amministratore\nInserisci l'username: ");
-        String inputAmmUsername = Leggi.unoString();
-        System.out.print("Inserisci la password: ");
-        String inputAmmPassword = Leggi.unoString();
-
-        sistema.loginAmministratore(inputAmmUsername, inputAmmPassword);
-    }
+    }    
 }

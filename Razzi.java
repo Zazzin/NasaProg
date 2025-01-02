@@ -76,6 +76,7 @@ public class Razzi {
     }
 
     public String toString() {
+        String out
         return "Insieme razzi:\n"+getRazzi();
     }
 
