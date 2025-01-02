@@ -78,7 +78,7 @@ public class Razzo {
     }
 
     public String toString(){
-        return "nome razzo: "+getNomeRazzo()+" raggio: "+getRaggio()+" numero di motori: "+getNumeroMotori()+" peso: "+ getPeso()+" altezza: "+getAltezza()+" id: "+getId();
+        return ">>  Razzo: "+ "\n    Nome:" + getNomeRazzo()+"\n    Raggio: " + getRaggio()+ "\n    Numero di motori: "+ getNumeroMotori() + "\n    Peso: "+ getPeso()+"\n    Altezza: "+getAltezza()+"\n    ID: " + getId();
     }
 
 }
