@@ -56,6 +56,7 @@ public class GesioneSistema {
 
         this.amministratore = new Amministratore(username, password, id);
     }
+    
 
     public String getID() {
         String inputID;
