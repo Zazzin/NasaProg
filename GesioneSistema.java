@@ -202,7 +202,7 @@ public class GesioneSistema {
                     lavoratori.removeLavoratore(getID());
                     break;
                 case 3:
-                    System.out.println(lavoratori.toString());
+                    System.out.println(lavoratori.findLavoratore(getID()));
                     break;
                 case 4:
                     System.out.println(lavoratori.toString());

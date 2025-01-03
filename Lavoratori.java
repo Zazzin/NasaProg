@@ -49,13 +49,7 @@ public class Lavoratori {
         this.insiemeLavoratori.remove(this.findLavoratore(inputId));
     }
 
-    public String toString(){
-        String output = "";
-        for (Lavoratore lavoratore : insiemeLavoratori) {
-            output += lavoratore.toString() + "\n";
-        }
-        // return "Insieme razzi:" + getLavotori();
-        return output;
+    public String toString() {
+        return ""+this.getLavotori();
     }
-
 }
