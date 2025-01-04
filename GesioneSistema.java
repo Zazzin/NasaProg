@@ -2,6 +2,7 @@ public class GesioneSistema {
     Razzi razzi;
     Lavoratori lavoratori;
     Amministratore amministratore;
+    Colori colori;
 
     @SuppressWarnings("unused")
     private Utente utenteAu;
@@ -11,6 +12,7 @@ public class GesioneSistema {
         razzi = new Razzi();
         lavoratori = new Lavoratori();
         amministratore = new Amministratore();
+        colori = new Colori();
     }
 
     public Razzi getRazzo() {
@@ -59,6 +61,7 @@ public class GesioneSistema {
     }
 
     public void menuEasterEgg(){
+        System.out.println(colori.getVerde());
         for (int i = 0; i < 1000; i++) {
             System.out.print("*");
             
@@ -104,6 +107,7 @@ public class GesioneSistema {
                     System.out.println("L'opzoine inserita non è valida");
             }
         } while (scelta != 5);
+        System.out.println(colori.getBianco());
     
     }
     
