@@ -60,7 +60,7 @@ public class GesioneSistema {
 
     public String getID() {
         String inputID;
-        System.out.print("Inserisci l'ID da ricercare: ");
+        System.out.print("Inserisci l'ID: ");
         inputID = Leggi.unoString();
         return inputID;
     }
