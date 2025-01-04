@@ -75,8 +75,21 @@ public class Razzi {
         }
     }
 
-    public void LanciaRazzo(Razzo razzoDaLanciare){
-        this.toString();
+    public void LanciaRazzo(String idRazzoDaLanciare){
+        
+        if (this.findRazzo(idRazzoDaLanciare) == null) {
+            System.err.println("Non è stato trovato alcun razzo con tale ID");
+            return;
+        }
+
+            
+        if (IsRazzoDecollatoDallInsiemeDeiRazzi(this.findRazzo(idRazzoDaLanciare).getId())) {
+            System.out.println("Il Razzo è decolatto con successo!");
+        } else{
+            System.out.println("Il Razzo non è potuto decollare, c'era un errore progettuale, il prototipo è andato distrutto");
+        }
+        
+        
         
     }
     

@@ -164,9 +164,11 @@ public class GesioneSistema {
                     razzi.removeRazzo(getID());
                     break;
                 case 3:
-                    // da sistemare
-                    //razzi.lanciaRazzo();
-                    razzi.findRazzo(getID());
+                    System.out.println(razzi.toString());
+                    String inputID;
+                    System.out.println("Inserisici l'id del razzo da lanciare");
+                    inputID = Leggi.unoString();
+                    razzi.LanciaRazzo(inputID);
                     break;
                 case 4:
                     System.out.println(razzi.toString());
