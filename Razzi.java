@@ -92,6 +92,23 @@ public class Razzi {
         
         
     }
+
+    public void LanciaRazzoBellico(String idRazzoDaLanciare){
+        
+        if (this.findRazzo(idRazzoDaLanciare) == null) {
+            System.err.println("Non è stato trovato alcun razzo con tale ID");
+            return;
+        }
+
+            
+        if (IsRazzoDecollatoDallInsiemeDeiRazzi(this.findRazzo(idRazzoDaLanciare).getId())) {
+            System.out.println("Il Razzo è decolatto con successo e ha colpito l'obiettivo");
+        } else{
+            System.out.println("Protocollo di lancio non andato a buon fine");
+        }
+        
+        
+    }
     
     public String toString() {
         return ""+ this.getRazzi();

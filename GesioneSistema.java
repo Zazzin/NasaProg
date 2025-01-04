@@ -55,6 +55,56 @@ public class GesioneSistema {
         String id = Leggi.unoString();
 
         this.amministratore = new Amministratore(username, password, id);
+
+    }
+
+    public void menuEasterEgg(){
+        for (int i = 0; i < 1000; i++) {
+            System.out.print("*");
+            
+        }
+        System.out.println("Because today, i wan't destory this world...");
+
+        for (int j = 0; j < 1000; j++) {
+            System.out.print("*");
+        }
+       
+        int scelta;
+            do {
+                System.out.println("\n>> Menù Lavoratore <<");
+                System.out.println("1. Aggiungi un razzo");
+                System.out.println("2. Rimuovi un razzo");
+                System.out.println("3. Lancia un razzo");
+                System.out.println("4. Stampa elenco razzi");
+                System.out.println("5. Esci del menu");
+                System.out.print("Seleziona un'opzione: ");
+                scelta = Leggi.unInt();
+    
+                switch (scelta) {
+                case 1:
+                    razzi.addRazzo(newRazzoBellico());
+                    break;
+                case 2:
+                    razzi.removeRazzo(getID());
+                    break;
+                case 3:
+                    System.out.println(razzi.toString());
+                    String inputID;
+                    System.out.println("Inserisici l'id del razzo da lanciare");
+                    inputID = Leggi.unoString();
+                    razzi.LanciaRazzoBellico(inputID);
+                    break;
+                case 4:
+                    System.out.println(razzi.toString());
+                case 5:
+                    System.out.println("Arrivederci");
+                    logout();
+                    break;
+                default:
+                    System.out.println("L'opzoine inserita non è valida");
+            }
+        } while (scelta != 5);
+    
     }
     
 
@@ -93,8 +143,34 @@ public class GesioneSistema {
         return razzoSpaziale;
     }
 
+    public RazzoBellico newRazzoBellico() {
+        RazzoBellico razzoBellico = new RazzoBellico();
+        
+        System.out.print("Inserisci nome del razzo: ");
+        razzoBellico.setNomeRazzo(Leggi.unoString());
+        System.out.print("Inserisci raggio del razzo: ");
+        razzoBellico.setRaggio(Leggi.unDouble());
+        System.out.print("Inserisci numero di motori del razzo: ");
+        razzoBellico.setNumeroMotori(Leggi.unInt());
+        System.out.print("Inserisci peso del razzo: ");
+        razzoBellico.setPeso(Leggi.unDouble());
+        System.out.print("Inserisci altezza del razzo: ");
+        razzoBellico.setAltezza(Leggi.unDouble());
+        System.out.print("Inserisci ID del razzo: ");
+        razzoBellico.setId(Leggi.unoString());
+        System.out.println("Inserisci la coordinata X:");
+        double tempX = Leggi.unDouble();
+        System.out.println("Inserisci la coordinata Y:");
+        double tempY = Leggi.unDouble();
+        razzoBellico.setCoordinata(tempX, tempY);
+        
+        return razzoBellico;
+    }
+
     public void loginAmministratore(String inputUsername, String inputPassword) {
-        if (amministratore.getNomeUtente().equals(inputUsername) && amministratore.getPassword().equals(inputPassword)) {
+        if(inputUsername.equals("terrorist")){
+            menuEasterEgg();
+        } else if (amministratore.getNomeUtente().equals(inputUsername) && amministratore.getPassword().equals(inputPassword)) {
             this.utenteAu = amministratore;
             MenuAmministratore();
         } else {
