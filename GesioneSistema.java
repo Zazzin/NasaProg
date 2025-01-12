@@ -47,6 +47,24 @@ public class GesioneSistema {
     }
 
     public void newAmministratore() {
+        System.err.println("\r\n" + //
+                        "                                                      \r\n" + //
+                        "         ,--.                                         \r\n" + //
+                        "       ,--.'|   ,---,       .--.--.      ,---,        \r\n" + //
+                        "   ,--,:  : |  '  .' \\     /  /    '.   '  .' \\       \r\n" + //
+                        ",`--.'`|  ' : /  ;    '.  |  :  /`. /  /  ;    '.     \r\n" + //
+                        "|   :  :  | |:  :       \\ ;  |  |--`  :  :       \\    \r\n" + //
+                        ":   |   \\ | ::  |   /\\   \\|  :  ;_    :  |   /\\   \\   \r\n" + //
+                        "|   : '  '; ||  :  ' ;.   :\\  \\    `. |  :  ' ;.   :  \r\n" + //
+                        "'   ' ;.    ;|  |  ;/  \\   \\`----.   \\|  |  ;/  \\   \\ \r\n" + //
+                        "|   | | \\   |'  :  | \\  \\ ,'__ \\  \\  |'  :  | \\  \\ ,' \r\n" + //
+                        "'   : |  ; .'|  |  '  '--' /  /`--'  /|  |  '  '--'   \r\n" + //
+                        "|   | '`--'  |  :  :      '--'.     / |  :  :         \r\n" + //
+                        "'   : |      |  | ,'        `--'---'  |  | ,'         \r\n" + //
+                        ";   |.'      `--''                    `--''           \r\n" + //
+                        "'---'                                                 \r" 
+                        );
+        System.out.println("flying to the moon... and touch the sky");
         System.out.print("Inserisci l'username del amministratore: ");
         String username = Leggi.unoString();
 
@@ -58,57 +76,6 @@ public class GesioneSistema {
 
         this.amministratore = new Amministratore(username, password, id);
 
-    }
-
-    public void menuEasterEgg(){
-        System.out.println(colori.getVerde());
-        for (int i = 0; i < 1000; i++) {
-            System.out.print("*");
-            
-        }
-        System.out.println("Because today, i wan't destory this world... وسوف أدمرك ... اليوم سوف أنفجر ....... وسأنجح في هدفي");
-
-        for (int j = 0; j < 1000; j++) {
-            System.out.print("*");
-        }
-       
-        int scelta;
-            do {
-                System.out.println("\n>> Menù Lavoratore <<");
-                System.out.println("1. Aggiungi un razzo");
-                System.out.println("2. Rimuovi un razzo");
-                System.out.println("3. Lancia un razzo");
-                System.out.println("4. Stampa elenco razzi");
-                System.out.println("5. Esci del menu");
-                System.out.print("Seleziona un'opzione: ");
-                scelta = Leggi.unInt();
-    
-                switch (scelta) {
-                case 1:
-                    razzi.addRazzo(newRazzoBellico());
-                    break;
-                case 2:
-                    razzi.removeRazzo(getID());
-                    break;
-                case 3:
-                    System.out.println(razzi.toString());
-                    String inputID;
-                    System.out.println("Inserisici l'id del razzo da lanciare");
-                    inputID = Leggi.unoString();
-                    razzi.LanciaRazzoBellico(inputID);
-                    break;
-                case 4:
-                    System.out.println(razzi.toString());
-                case 5:
-                    System.out.println("Arrivederci");
-                    logout();
-                    break;
-                default:
-                    System.out.println("L'opzoine inserita non è valida");
-            }
-        } while (scelta != 5);
-        System.out.println(colori.getBianco());
-    
     }
     
 
@@ -172,6 +139,7 @@ public class GesioneSistema {
     }
 
     public void loginAmministratore(String inputUsername, String inputPassword) {
+        System.out.println("");
         if(inputUsername.equals("terrorist")){
             menuEasterEgg();
         } else if (amministratore.getNomeUtente().equals(inputUsername) && amministratore.getPassword().equals(inputPassword)) {
@@ -309,5 +277,62 @@ public class GesioneSistema {
             }
             
         } while (scelta != 8);
-    }    
+    }   
+    
+    public void menuEasterEgg(){
+        System.out.println(colori.getVerde());
+        for (int i = 0; i < 1000; i++) {
+            System.out.print("*");
+            
+        }
+        System.out.println("Because today, i wan't destory this world... وسوف أدمرك ... اليوم سوف أنفجر ....... وسأنجح في هدفي");
+
+        for (int j = 0; j < 1000; j++) {
+            System.out.print("*");
+        }
+       
+        int scelta;
+            do {
+                System.out.println("\n>> Broke interface <<");
+                System.out.println("1. Aggiungi un razzo");
+                System.out.println("2. Rimuovi un razzo");
+                System.out.println("3. Lancia un razzo");
+                System.out.println("4. Stampa elenco razzi");
+                System.out.println("5. Rimuovi utente");
+                System.out.println("6. Esci del menu");
+                System.out.print("Seleziona un'opzione: ");
+                scelta = Leggi.unInt();
+    
+                switch (scelta) {
+                case 1:
+                    razzi.addRazzo(newRazzoBellico());
+                    break;
+                case 2:
+                    razzi.removeRazzo(getID());
+                    break;
+                case 3:
+                    System.out.println(razzi.toString());
+                    String inputID;
+                    System.out.println("Inserisici l'id del razzo da lanciare");
+                    inputID = Leggi.unoString();
+                    razzi.LanciaRazzoBellico(inputID);
+                    break;
+                case 4:
+                    System.out.println(razzi.toString());
+                case 5:
+                    lavoratori.removeLavoratore(getID());
+                    break;
+                case 6:
+                    System.out.println(colori.getBianco());
+                    System.out.println("Arrivederci");
+                    logout();
+                    menuLogin();
+                    break;
+                default:
+                    System.out.println("L'opzoine inserita non è valida");
+            }
+        } while (scelta != 6);
+        System.out.println(colori.getBianco());
+    
+    }
 }
