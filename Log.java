@@ -20,7 +20,7 @@ public class Log {
         return (this.azioni.add(azioneDaAggiungere)) ;
     }
     public String toString() {
-        return "azioni con data e ora: \n" + getAzioni();
+        return "\nAzioni con data e ora: \n" + getAzioni();
     }
 }
  

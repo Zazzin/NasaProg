@@ -41,8 +41,9 @@ public class Lavoratore extends Utente{ // tincani: aggiuto exdends utente
 
     @Override
     public String toString(){
-        return "\n>> Lavoratore" + "\n    Username: " + getNomeUtente() +"\n    Password: "+ getPassword() +"\n    ID: "+ getId();
+        return "\n>> Lavoratore" + "\n    Username: " + getNomeUtente() +"\n    Password: "+ getPassword() +"\n    ID: " + getId() + "\n";
     }
+    
 
 
 

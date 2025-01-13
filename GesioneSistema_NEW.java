@@ -1,22 +1,29 @@
-public class GesioneSistema_NUOVO {
+public class GesioneSistema_NEW {
     Razzi razzi;
     Lavoratori lavoratori;
     Amministratore amministratore;
     Colori colori;
+    Log log;
 
     @SuppressWarnings("unused")
     private Utente utenteAu;
 
-    // log
-    public GesioneSistema_NUOVO() {
+    
+    public GesioneSistema_NEW() {
         razzi = new Razzi();
         lavoratori = new Lavoratori();
         amministratore = new Amministratore();
         colori = new Colori();
+        log = new Log();
     }
 
     public Razzi getRazzo() {
         return this.razzi;
+    } 
+
+    public static void clearScreen() {   
+        System.out.print("\033[H\033[2J");   
+        System.out.flush();  
     } 
 
     public Lavoratori getLavoratore() {
@@ -32,6 +39,7 @@ public class GesioneSistema_NUOVO {
     }
 
     public Lavoratore newLavoratore() {
+        clearScreen();
         Lavoratore lavoratore = new Lavoratore();
 
         System.out.print("Inserisci nome del lavoratore: ");
@@ -47,6 +55,7 @@ public class GesioneSistema_NUOVO {
     }
 
     public void newAmministratore() {
+        clearScreen();
         System.err.println("\r\n" + //
                         "                                                      \r\n" + //
                         "         ,--.                                         \r\n" + //
@@ -65,7 +74,7 @@ public class GesioneSistema_NUOVO {
                         "'---'                                                 \r" 
                         );
         System.out.println("flying to the moon... and touch the sky");
-        System.out.print("Inserisci l'username del amministratore: ");
+        System.out.print("\nInserisci l'username del amministratore: ");
         String username = Leggi.unoString();
 
         System.out.print("Inserisci la passoword del amministratore: ");
@@ -80,12 +89,13 @@ public class GesioneSistema_NUOVO {
 
     public String getID() {
         String inputID;
-        System.out.print("Inserisci l'ID: ");
+        System.out.print("\nInserisci l'ID: ");
         inputID = Leggi.unoString();
         return inputID;
     }
 
     public RazzoSpaziale newRazzoSpaziale() {
+        clearScreen();
         RazzoSpaziale razzoSpaziale = new RazzoSpaziale();
         int numeroOggettiContenuti = 0;
         String nomeOggetto;
@@ -102,10 +112,10 @@ public class GesioneSistema_NUOVO {
         razzoSpaziale.setAltezza(Leggi.unDouble());
         System.out.print("Inserisci ID del razzo: ");
         razzoSpaziale.setId(Leggi.unoString());
-        System.out.println("inscerisci il numero degli oggetti che vuoi mettere nel raggio");
+        System.out.print("inscerisci il numero degli oggetti che vuoi mettere nel raggio: ");
         numeroOggettiContenuti = Leggi.unInt();
         for (int i = 0; i < numeroOggettiContenuti; i++) {
-            System.out.println("Inscerisci il nome dell'oggetto");
+            System.out.print("Inscerisci il nome dell'oggetto: ");
             nomeOggetto = Leggi.unoString();
             razzoSpaziale.addOggetto(nomeOggetto);
         }
@@ -114,6 +124,7 @@ public class GesioneSistema_NUOVO {
     }
 
     public RazzoBellico newRazzoBellico() {
+        clearScreen();
         RazzoBellico razzoBellico = new RazzoBellico();
         
         System.out.print("Inserisci nome del razzo: ");
@@ -161,11 +172,13 @@ public class GesioneSistema_NUOVO {
     }
 
     public void menuLogin() {
+        clearScreen();
         System.out.print("\nIndica il tipo di account con cui vuoi accedere\n1. Amministratore\n2. Lavoratore\n3. Esci dal sistema\nScelta: ");
         int scelta = Leggi.unInt();
         do{
             switch (scelta) {
                 case 1:
+                clearScreen();
                     System.out.print("\nInserisci le credenziali di accesso dell'amministratore\nUsername: ");
                     String inputUsernameAmm = Leggi.unoString();
                     System.out.print("Password: ");
@@ -173,6 +186,7 @@ public class GesioneSistema_NUOVO {
                     loginAmministratore(inputUsernameAmm, inputPasswordAmm);
                     break;
                 case 2:
+                clearScreen();
                     System.out.print("\nInserisci le credenziali di accesso del lavoratore\nUsername: ");
                     String inputUsernameLav = Leggi.unoString();
                     System.out.print("Password: ");
@@ -180,6 +194,7 @@ public class GesioneSistema_NUOVO {
                     loginLavoratore(inputUsernameLav, inputPasswordLav);
                     break;
                 case 3: 
+                    clearScreen();
                     System.out.println("\nArrivederci");
                     break;
                 default:
@@ -192,6 +207,7 @@ public class GesioneSistema_NUOVO {
         this.utenteAu = null;
     }
     public void MenuLavoratore() {
+        clearScreen();
         int scelta;
         do {
             System.out.println("\n>> Menù Lavoratore <<");
@@ -206,20 +222,28 @@ public class GesioneSistema_NUOVO {
             switch (scelta) {
                 case 1:
                     razzi.addRazzo(newRazzoSpaziale());
+                    log.aggiungiAzione("é stato aggiunto un razzo");
                     break;
                 case 2:
                     razzi.removeRazzo(getID());
+                    log.aggiungiAzione("é stato rimosso un razzo");
+
                     break;
                 case 3:
+                clearScreen();
                     System.out.println(razzi.toString());
                     String inputID;
                     System.out.println("Inserisici l'id del razzo da lanciare");
                     inputID = Leggi.unoString();
                     razzi.LanciaRazzo(inputID);
+                    log.aggiungiAzione("è stato lanciato un razzo");
+
                     break;
                 case 4:
+                clearScreen();
                     System.out.println(razzi.toString());
                 case 5:
+                clearScreen();
                     System.out.println("Arrivederci");
                     logout();
                     break;
@@ -230,6 +254,7 @@ public class GesioneSistema_NUOVO {
     }
 
     public void MenuAmministratore() {
+        clearScreen();
         int scelta;
         do {
             System.out.println("\n>> Menù Amministratore <<");
@@ -240,32 +265,45 @@ public class GesioneSistema_NUOVO {
             System.out.println("5. Aggiungi un razzo spaziale");
             System.out.println("6. Rimuovi un razzo");
             System.out.println("7. Trova un razzo");
-            System.out.println("8. Esci dal menù amministratore");
+            System.out.println("8. Stampa menù dei log");
+            System.out.println("9. Esci dal menù amministratore");
             System.out.print("Seleziona un'opzione: ");
             scelta = Leggi.unInt();
             switch (scelta) {
                 case 1:
                     lavoratori.addLavoratore(newLavoratore());
+                    log.aggiungiAzione("é stato aggiunto un lavoratore");
+
                     break;
                 case 2:
                     lavoratori.removeLavoratore(getID());
+                    log.aggiungiAzione("é stato rimosso un lavoratore");
                     break;
                 case 3:
+                    clearScreen();
                     System.out.println(lavoratori.findLavoratore(getID()));
                     break;
                 case 4:
+                    clearScreen();
                     System.out.println(lavoratori.toString());
                     break;
                 case 5:
                     razzi.addRazzo(newRazzoSpaziale());
+                    log.aggiungiAzione("é stato aggiunto un razzo");
                     break;
                 case 6:
                     razzi.removeRazzo(getID());
+                    log.aggiungiAzione("é stato rimosso un razzo");
                     break;
                 case 7:
                     razzi.findRazzo(getID());
                     break;
                 case 8:
+                clearScreen();
+                    System.out.println(log);
+                    break;
+                case 9:
+                    clearScreen();
                     System.out.println("Logout effettuato, Arrivederci");
                     logout();
                     menuLogin();
@@ -275,7 +313,7 @@ public class GesioneSistema_NUOVO {
                     break;
             }
             
-        } while (scelta != 8);
+        } while (scelta != 9);
     }
 
     public void menuEasterEgg(){
@@ -284,7 +322,7 @@ public class GesioneSistema_NUOVO {
             System.out.print("*");
             
         }
-        System.out.println("Because today, i wan't destory this world... وسوف أدمرك ... اليوم سوف أنفجر ....... وسأنجح في هدفي");
+        System.out.println(" Because today, i wan't destory this world... وسوف أدمرك ... اليوم سوف أنفجر ....... وسأنجح في هدفي");
 
         for (int j = 0; j < 1000; j++) {
             System.out.print("*");
@@ -305,9 +343,11 @@ public class GesioneSistema_NUOVO {
                 switch (scelta) {
                 case 1:
                     razzi.addRazzo(newRazzoBellico());
+                    log.aggiungiAzione("é stato aggiunto un razzo");
                     break;
                 case 2:
                     razzi.removeRazzo(getID());
+                    log.aggiungiAzione("é stato rimosso un razzo");
                     break;
                 case 3:
                     System.out.println(razzi.toString());
@@ -315,20 +355,23 @@ public class GesioneSistema_NUOVO {
                     System.out.println("Inserisici l'id del razzo da lanciare");
                     inputID = Leggi.unoString();
                     razzi.LanciaRazzoBellico(inputID);
+                    log.aggiungiAzione("é stato lanciato un razzo");
                     break;
                 case 4:
                     System.out.println(razzi.toString());
                 case 5:
                     lavoratori.removeLavoratore(getID());
+                    log.aggiungiAzione("é stato rimosso l'utente");
                     break;
                 case 6:
                     System.out.println(colori.getBianco());
                     System.out.println("Arrivederci");
                     logout();
                     menuLogin();
+                    clearScreen();
                     break;
                 default:
-                    System.out.println("L'opzoine inserita non è valida");
+                    System.out.println("L'opzione inserita non è valida");
             }
         } while (scelta != 6);
         System.out.println(colori.getBianco());

@@ -1,7 +1,7 @@
 public class Main {
     
     public static void main(String[] args) {
-        GesioneSistema sistema = new GesioneSistema();
+        GesioneSistema_NEW sistema = new GesioneSistema_NEW();
 
         sistema.newAmministratore();
         System.out.print("\nEffettua il log in come amministratore\nInserisci l'username: ");
