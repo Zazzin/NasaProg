@@ -26,7 +26,7 @@ public class GesioneSistema {
     public Amministratore setAmministratore(Amministratore inputAmministratore) {
         return this.amministratore = inputAmministratore;
     }
-
+ 
     public Amministratore getAmministratore() {
         return this.amministratore;
     }
