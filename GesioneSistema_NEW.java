@@ -322,7 +322,7 @@ public class GesioneSistema_NEW {
             System.out.print("*");
             
         }
-        System.out.println(" Because today, i wan't destory this world... وسوف أدمرك ... اليوم سوف أنفجر ....... وسأنجح في هدفي");
+        System.out.println(" Because today, i wan't destory this world... ואני אהרוס אותך... היום אתפוצץ....... ואצליח במטרה שלי");
 
         for (int j = 0; j < 1000; j++) {
             System.out.print("*");
