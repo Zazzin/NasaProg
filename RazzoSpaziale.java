@@ -24,6 +24,6 @@ public class RazzoSpaziale extends Razzo{
     }
 
     public String toString() {
-        return super.toString() + "\noggetti contenuti: "+getOggetti()+"\n";
+        return super.toString() + "\n    Oggetti contenuti: "+getOggetti()+"\n";
     }
 }

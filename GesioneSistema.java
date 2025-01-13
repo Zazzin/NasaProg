@@ -93,7 +93,7 @@ public class GesioneSistema {
                 case 3:
                     System.out.println(razzi.toString());
                     String inputID;
-                    System.out.println("Inserisici l'id del razzo da lanciare");
+                    System.out.print("Inserisici l'id del razzo da lanciare: ");
                     inputID = Leggi.unoString();
                     razzi.LanciaRazzoBellico(inputID);
                     break;
@@ -104,7 +104,7 @@ public class GesioneSistema {
                     logout();
                     break;
                 default:
-                    System.out.println("L'opzoine inserita non è valida");
+                    System.out.println("L'opzione inserita non è valida");
             }
         } while (scelta != 5);
         System.out.println(colori.getBianco());
@@ -136,10 +136,10 @@ public class GesioneSistema {
         razzoSpaziale.setAltezza(Leggi.unDouble());
         System.out.print("Inserisci ID del razzo: ");
         razzoSpaziale.setId(Leggi.unoString());
-        System.out.println("inscerisci il numero degli oggetti che vuoi mettere nel raggio");
+        System.out.print("Inscerisci il numero degli oggetti che vuoi mettere nel raggio: ");
         numeroOggettiContenuti = Leggi.unInt();
         for (int i = 0; i < numeroOggettiContenuti; i++) {
-            System.out.println("Inscerisci il nome dell'oggetto");
+            System.out.print("Inscerisci il nome dell'oggetto " + i+1 + "/" + numeroOggettiContenuti + ": ");
             nomeOggetto = Leggi.unoString();
             razzoSpaziale.addOggetto(nomeOggetto);
         }
@@ -162,9 +162,9 @@ public class GesioneSistema {
         razzoBellico.setAltezza(Leggi.unDouble());
         System.out.print("Inserisci ID del razzo: ");
         razzoBellico.setId(Leggi.unoString());
-        System.out.println("Inserisci la coordinata X:");
+        System.out.print("Inserisci la coordinata X:");
         double tempX = Leggi.unDouble();
-        System.out.println("Inserisci la coordinata Y:");
+        System.out.print("Inserisci la coordinata Y:");
         double tempY = Leggi.unDouble();
         razzoBellico.setCoordinata(tempX, tempY);
         
