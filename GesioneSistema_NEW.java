@@ -201,6 +201,7 @@ public class GesioneSistema_NEW {
                     clearScreen();
                     System.out.println("\nArrivederci");
                     logout();
+                    System.exit(0);
                     return;
     
                 default:
