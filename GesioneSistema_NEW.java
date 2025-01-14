@@ -206,6 +206,7 @@ public class GesioneSistema_NEW {
     public void logout() {
         this.utenteAu = null;
     }
+
     public void MenuLavoratore() {
         clearScreen();
         int scelta;
@@ -230,7 +231,7 @@ public class GesioneSistema_NEW {
 
                     break;
                 case 3:
-                clearScreen();
+                    clearScreen();
                     System.out.println(razzi.toString());
                     String inputID;
                     System.out.println("Inserisici l'id del razzo da lanciare");
@@ -246,6 +247,7 @@ public class GesioneSistema_NEW {
                 clearScreen();
                     System.out.println("Arrivederci");
                     logout();
+                    menuLogin();
                     break;
                 default:
                     System.out.println("L'opzoine inserita non è valida");
@@ -299,7 +301,7 @@ public class GesioneSistema_NEW {
                     razzi.findRazzo(getID());
                     break;
                 case 8:
-                clearScreen();
+                    clearScreen();
                     System.out.println(log);
                     break;
                 case 9:
