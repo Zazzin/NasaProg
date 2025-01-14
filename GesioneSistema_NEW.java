@@ -201,8 +201,8 @@ public class GesioneSistema_NEW {
                     clearScreen();
                     System.out.println("\nArrivederci");
                     logout();
-                    System.exit(0);
-                    return;
+                    System.exit(0); // uscita 
+                    break;
     
                 default:
                     System.out.println("Opzione non valida. Riprova.");
