@@ -11,20 +11,4 @@ public class Main {
 
         sistema.loginAmministratore(inputAmmUsername, inputAmmPassword);
     }
-
-    
-
-    // public static void main(String[] args) {
-    //     GesioneSistema gestioneSistema = new GesioneSistema();
-    //     String ruolo;
-    //     System.out.println("scrivi Lavoatore o Amministratore in base a acosa sei");
-    //     ruolo = Leggi.unoString();
-    //     if (ruolo.equals("Lavoratore")) {
-    //         gestioneSistema.loginLavoratore(, );
-    //     }else if(ruolo.equals("Amministatore")){
-    //         gestioneSistema.loginAmministratore(, );
-    //     }
-    //     
-    // }
-    
 }
