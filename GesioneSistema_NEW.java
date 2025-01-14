@@ -39,7 +39,7 @@ public class GesioneSistema_NEW {
     }
 
     public Lavoratore newLavoratore() {
-        clearScreen();
+        // clearScreen();
         Lavoratore lavoratore = new Lavoratore();
 
         System.out.print("Inserisci nome del lavoratore: ");
@@ -55,7 +55,7 @@ public class GesioneSistema_NEW {
     }
 
     public void newAmministratore() {
-        clearScreen();
+        // clearScreen();
         System.err.println("\r\n" + //
                         "                                                      \r\n" + //
                         "         ,--.                                         \r\n" + //
@@ -95,7 +95,7 @@ public class GesioneSistema_NEW {
     }
 
     public RazzoSpaziale newRazzoSpaziale() {
-        clearScreen();
+        // clearScreen();
         RazzoSpaziale razzoSpaziale = new RazzoSpaziale();
         int numeroOggettiContenuti = 0;
         String nomeOggetto;
@@ -124,7 +124,7 @@ public class GesioneSistema_NEW {
     }
 
     public RazzoBellico newRazzoBellico() {
-        clearScreen();
+        // clearScreen();
         RazzoBellico razzoBellico = new RazzoBellico();
         
         System.out.print("Inserisci nome del razzo: ");
@@ -172,7 +172,7 @@ public class GesioneSistema_NEW {
     }
 
     public void menuLogin() {
-        clearScreen();
+        // clearScreen();
         int scelta;
         do {
             System.out.print("\nIndica il tipo di account con cui vuoi accedere\n1. Amministratore\n2. Lavoratore\n3. Esci dal sistema\nScelta: ");
@@ -180,7 +180,7 @@ public class GesioneSistema_NEW {
     
             switch (scelta) {
                 case 1:
-                    clearScreen();
+                    // clearScreen();
                     System.out.print("\nInserisci le credenziali di accesso dell'amministratore\nUsername: ");
                     String inputUsernameAmm = Leggi.unoString();
                     System.out.print("Password: ");
@@ -189,7 +189,7 @@ public class GesioneSistema_NEW {
                     break;
     
                 case 2:
-                    clearScreen();
+                    // clearScreen();
                     System.out.print("\nInserisci le credenziali di accesso del lavoratore\nUsername: ");
                     String inputUsernameLav = Leggi.unoString();
                     System.out.print("Password: ");
@@ -198,7 +198,7 @@ public class GesioneSistema_NEW {
                     break;
     
                 case 3: 
-                    clearScreen();
+                    // clearScreen();
                     System.out.println("\nArrivederci");
                     logout();
                     System.exit(0); // uscita 
@@ -216,7 +216,7 @@ public class GesioneSistema_NEW {
     }
 
     public void MenuLavoratore() {
-        clearScreen();
+        // // clearScreen();
         int scelta;
         do {
             System.out.println("\n>> Menù Lavoratore <<");
@@ -239,7 +239,7 @@ public class GesioneSistema_NEW {
 
                     break;
                 case 3:
-                    clearScreen();
+                    // clearScreen();
                     System.out.println(razzi.toString());
                     String inputID;
                     System.out.println("Inserisici l'id del razzo da lanciare");
@@ -249,10 +249,10 @@ public class GesioneSistema_NEW {
 
                     break;
                 case 4:
-                clearScreen();
+                // // clearScreen();
                     System.out.println(razzi.toString());
                 case 5:
-                clearScreen();
+                // clearScreen();
                     System.out.println("Arrivederci");
                     logout();
                     menuLogin();
@@ -264,7 +264,7 @@ public class GesioneSistema_NEW {
     }
 
     public void MenuAmministratore() {
-        clearScreen();
+        // // clearScreen();
         int scelta;
         do {
             System.out.println("\n>> Menù Amministratore <<");
@@ -290,11 +290,11 @@ public class GesioneSistema_NEW {
                     log.aggiungiAzione("é stato rimosso un lavoratore");
                     break;
                 case 3:
-                    clearScreen();
+                    // clearScreen();
                     System.out.println(lavoratori.findLavoratore(getID()));
                     break;
                 case 4:
-                    clearScreen();
+                    // clearScreen();
                     System.out.println(lavoratori.toString());
                     break;
                 case 5:
@@ -309,11 +309,11 @@ public class GesioneSistema_NEW {
                     razzi.findRazzo(getID());
                     break;
                 case 8:
-                    clearScreen();
+                    //// clearScreen();
                     System.out.println(log);
                     break;
                 case 9:
-                    clearScreen();
+                    // clearScreen();
                     System.out.println("Logout effettuato, Arrivederci");
                     logout();
                     menuLogin();
@@ -378,7 +378,7 @@ public class GesioneSistema_NEW {
                     System.out.println("Arrivederci");
                     logout();
                     menuLogin();
-                    clearScreen();
+                    // clearScreen();
                     break;
                 default:
                     System.out.println("L'opzione inserita non è valida");
