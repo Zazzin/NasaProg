@@ -173,35 +173,42 @@ public class GesioneSistema_NEW {
 
     public void menuLogin() {
         clearScreen();
-        System.out.print("\nIndica il tipo di account con cui vuoi accedere\n1. Amministratore\n2. Lavoratore\n3. Esci dal sistema\nScelta: ");
-        int scelta = Leggi.unInt();
-        do{
+        int scelta;
+        do {
+            System.out.print("\nIndica il tipo di account con cui vuoi accedere\n1. Amministratore\n2. Lavoratore\n3. Esci dal sistema\nScelta: ");
+            scelta = Leggi.unInt();
+    
             switch (scelta) {
                 case 1:
-                clearScreen();
+                    clearScreen();
                     System.out.print("\nInserisci le credenziali di accesso dell'amministratore\nUsername: ");
                     String inputUsernameAmm = Leggi.unoString();
                     System.out.print("Password: ");
                     String inputPasswordAmm = Leggi.unoString();
                     loginAmministratore(inputUsernameAmm, inputPasswordAmm);
                     break;
+    
                 case 2:
-                clearScreen();
+                    clearScreen();
                     System.out.print("\nInserisci le credenziali di accesso del lavoratore\nUsername: ");
                     String inputUsernameLav = Leggi.unoString();
                     System.out.print("Password: ");
                     String inputPasswordLav = Leggi.unoString();
                     loginLavoratore(inputUsernameLav, inputPasswordLav);
                     break;
+    
                 case 3: 
                     clearScreen();
                     System.out.println("\nArrivederci");
-                    break;
+                    logout();
+                    return;
+    
                 default:
+                    System.out.println("Opzione non valida. Riprova.");
                     break;
             }
-        } while (scelta != 3);
-   }
+        } while (scelta != 3); 
+    }
 
     public void logout() {
         this.utenteAu = null;
