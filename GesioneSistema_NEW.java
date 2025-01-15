@@ -251,6 +251,7 @@ public class GesioneSistema_NEW {
                 case 4:
                 // // clearScreen();
                     System.out.println(razzi.toString());
+                    break;
                 case 5:
                 // clearScreen();
                     System.out.println("Arrivederci");
@@ -369,6 +370,7 @@ public class GesioneSistema_NEW {
                     break;
                 case 4:
                     System.out.println(razzi.toString());
+                    break;
                 case 5:
                     lavoratori.removeLavoratore(getID());
                     log.aggiungiAzione("é stato rimosso l'utente");
